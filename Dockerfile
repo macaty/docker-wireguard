@@ -4,7 +4,7 @@ RUN echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.li
  printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
 
 RUN apt update && \
- apt install -y --no-install-recommends wireguard-tools iptables nano net-tools && \
+ apt install -y --no-install-recommends openresolv wireguard-tools iptables nano net-tools && \
  apt clean
 
 WORKDIR /scripts
